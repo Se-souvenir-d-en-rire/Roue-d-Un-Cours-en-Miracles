@@ -69,11 +69,9 @@ h1{font-size:1.5rem;margin:2px 0 4px;text-align:center}
 .ins-card h2{margin:0 40px 6px 0;font-size:1.25rem;line-height:1.25}
 .ins-lead,.ab{margin:0 0 10px;color:var(--muted);line-height:1.45}
 .ab b,.ab i{color:var(--text)}
+.ab-small{font-size:.85rem;margin:6px 0 0}
 .ins-x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;border:none;background:var(--bg);color:var(--text);font-size:1.05rem;cursor:pointer;line-height:1}
 .ins-warn{margin-top:14px;border-radius:14px;padding:12px 14px;background:#fff3cd;color:#4d3b00;border:1px solid #f0d78a;line-height:1.4;font-size:.95rem}
-.ins-tabs{display:flex;gap:8px;margin-top:14px}
-.ins-tabs button{flex:1;font:inherit;font-weight:600;padding:10px 8px;border-radius:12px;border:2px solid transparent;background:var(--bg);color:var(--muted);cursor:pointer}
-.ins-tabs button[aria-selected="true"]{border-color:var(--accent);color:var(--text)}
 .ins-desk{margin:12px 0 0;color:var(--muted);font-size:.92rem;line-height:1.4}
 .steps{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
 .steps li{display:flex;align-items:center;gap:12px;background:var(--bg);border-radius:16px;padding:11px 14px;line-height:1.35}
@@ -113,39 +111,33 @@ h1{font-size:1.5rem;margin:2px 0 4px;text-align:center}
 <div class="ins" id="about" hidden role="dialog" aria-modal="true" aria-labelledby="aboutT">
   <div class="ins-card">
     <button class="ins-x" id="aboutX" data-close type="button" aria-label="Fermer">✕</button>
-    <h2 id="aboutT">🎡 À propos de la roue</h2>
-    <p class="ab">Une roue que l’on tourne et qui génère des messages tirés de l’enseignement d’<i>Un Cours en Miracles</i>, avec leurs références.</p>
-    <p class="ab"><b>Application gratuite</b> – utilisation personnelle.</p>
-    <p class="ab">Pour la retrouver facilement : touche <b>«&nbsp;Installer&nbsp;»</b> en haut à droite pour mettre une icône sur ton écran d’accueil, ou <b>«&nbsp;Copier le lien&nbsp;»</b> pour le garder comme un favori.</p>
+    <h2 id="aboutT">🎡 À propos</h2>
+    <p class="ab">Une roue que l’on tourne pour recevoir une phrase tirée d’<i>Un Cours en Miracles</i>, avec sa référence.</p>
+    <p class="ab">📱 <b>Sur smartphone</b>, touche <b>«&nbsp;Installer&nbsp;»</b> en haut à droite pour mettre la roue sur ton écran d’accueil, comme une appli. Si l’installation ne se lance pas, <b>«&nbsp;Copier le lien&nbsp;»</b> te permet de la garder comme un favori.</p>
+    <p class="ab">💻 Sur ordinateur, le même bouton l’ajoute à ton bureau.</p>
+    <p class="ab ab-small">Gratuit · usage personnel</p>
     <div class="ins-btns"><button type="button" class="ins-ok" data-close>Fermer</button></div>
   </div>
 </div>
 <div class="ins" id="ins" hidden role="dialog" aria-modal="true" aria-labelledby="insT">
   <div class="ins-card">
     <button class="ins-x" id="insX" data-close type="button" aria-label="Fermer">✕</button>
-    <h2 id="insT">📲 Mettre la roue sur ton écran d’accueil</h2>
-    <p class="ins-lead">Elle s’ouvrira d’un seul toucher, comme une vraie appli. C’est gratuit, rien à télécharger.</p>
-    <div class="ins-warn" id="insFb" hidden>⚠️ <b>Tu es dans le navigateur d’une autre appli</b> (Facebook, messagerie…). Il ne permet pas toujours l’installation. Appuie sur les <b>trois points</b> (⋯ ou ⋮), en haut ou en bas à droite de l’écran, puis choisis <b>«&nbsp;Ouvrir dans le navigateur&nbsp;»</b> (ou «&nbsp;Ouvrir dans Chrome&nbsp;» / «&nbsp;Ouvrir dans Safari&nbsp;»). Sinon, copie simplement le lien ci-dessous.</div>
-    <div class="ins-tabs" role="tablist">
-      <button type="button" role="tab" id="tabA" aria-selected="true">🤖 Android</button>
-      <button type="button" role="tab" id="tabI" aria-selected="false">🍎 iPhone / iPad</button>
-    </div>
-    <p class="ins-desk" id="insDesk" hidden>💻 Sur ordinateur : avec Chrome ou Edge, clique sur l’icône d’installation (un petit écran avec une flèche) tout à droite de la barre d’adresse.</p>
+    <h2 id="insT">📲 Ajouter la roue à ton écran d’accueil</h2>
+    <p class="ins-warn" id="insFb" hidden>Ouvre d’abord ce lien dans <b>Chrome</b> ou <b>Safari</b> (menu ⋯ ou ⋮, puis «&nbsp;Ouvrir dans le navigateur&nbsp;»).</p>
+    <p class="ins-desk" id="insDesk" hidden>💻 Sur ordinateur : clique sur l’icône d’installation à droite de la barre d’adresse (Chrome ou Edge).</p>
     <ol class="steps" id="stepsA">
-      <li><span class="n">1</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span>Ouvre la roue dans <b>Chrome</b>.</span></li>
-      <li><span class="n">2</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="f" cx="12" cy="5" r="1.8"/><circle class="f" cx="12" cy="12" r="1.8"/><circle class="f" cx="12" cy="19" r="1.8"/></svg></span><span>Appuie sur les <b>trois points</b> en haut à droite.</span></li>
-      <li><span class="n">3</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M12 8v6M9.5 11.8l2.5 2.5 2.5-2.5"/></svg></span><span>Choisis <b>«&nbsp;Installer l’application&nbsp;»</b> (ou «&nbsp;Ajouter à l’écran d’accueil&nbsp;»).</span></li>
-      <li><span class="n">4</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.2"/><path d="M12 3v6.8M12 14.2V21M3 12h6.8M14.2 12H21M5.6 5.6l4.8 4.8M13.6 13.6l4.8 4.8M18.4 5.6l-4.8 4.8M10.4 13.6l-4.8 4.8"/></svg></span><span>Confirme : l’icône de la roue apparaît sur ton écran d’accueil.</span></li>
+      <li><span class="n">1</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="f" cx="12" cy="5" r="1.8"/><circle class="f" cx="12" cy="12" r="1.8"/><circle class="f" cx="12" cy="19" r="1.8"/></svg></span><span>Appuie sur les <b>trois points</b> en haut à droite.</span></li>
+      <li><span class="n">2</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M12 8v6M9.5 11.8l2.5 2.5 2.5-2.5"/></svg></span><span>Choisis <b>«&nbsp;Installer l’application&nbsp;»</b> ou «&nbsp;Ajouter à l’écran d’accueil&nbsp;».</span></li>
+      <li><span class="n">3</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.2"/><path d="M12 3v6.8M12 14.2V21M3 12h6.8M14.2 12H21M5.6 5.6l4.8 4.8M13.6 13.6l4.8 4.8M18.4 5.6l-4.8 4.8M10.4 13.6l-4.8 4.8"/></svg></span><span>Confirme : l’icône apparaît sur ton écran d’accueil.</span></li>
     </ol>
     <ol class="steps" id="stepsI" hidden>
-      <li><span class="n">1</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span><span>Ouvre la roue dans <b>Safari</b>.</span></li>
-      <li><span class="n">2</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M8 7l4-4 4 4"/><path d="M8 11H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2"/></svg></span><span>Appuie sur le bouton <b>Partager</b> (un carré avec une flèche vers le haut), en bas de l’écran — en haut sur iPad.</span></li>
-      <li><span class="n">3</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></span><span>Fais défiler et choisis <b>«&nbsp;Sur l’écran d’accueil&nbsp;»</b>.</span></li>
-      <li><span class="n">4</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg></span><span>Appuie sur <b>Ajouter</b> en haut à droite : c’est fait !</span></li>
+      <li><span class="n">1</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M8 7l4-4 4 4"/><path d="M8 11H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-2"/></svg></span><span>Dans <b>Safari</b>, appuie sur <b>Partager</b> (le carré avec la flèche), en bas de l’écran — en haut sur iPad.</span></li>
+      <li><span class="n">2</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></span><span>Choisis <b>«&nbsp;Sur l’écran d’accueil&nbsp;»</b>.</span></li>
+      <li><span class="n">3</span><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg></span><span>Appuie sur <b>Ajouter</b>.</span></li>
     </ol>
     <div class="ins-btns">
       <button type="button" class="ins-copy" id="insCopy">🔗 Copier le lien de la roue</button>
-      <button type="button" class="ins-ok" data-close>J’ai compris</button>
+      <button type="button" class="ins-ok" data-close>Fermer</button>
     </div>
   </div>
 </div>
@@ -377,16 +369,12 @@ btn.addEventListener('click',()=>{
   addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e});
   addEventListener('appinstalled',function(){dp=null;right.hidden=true;closeModal()});
 
-  function tab(ios){
-    $('tabA').setAttribute('aria-selected',String(!ios));
-    $('tabI').setAttribute('aria-selected',String(ios));
-    $('stepsA').hidden=ios;
-    $('stepsI').hidden=!ios;
-  }
   function openIns(){
+    var desk=!isIOS&&!isAndroid;
     $('insFb').hidden=!inApp;
-    $('insDesk').hidden=isIOS||isAndroid;
-    tab(isIOS);
+    $('insDesk').hidden=!desk;
+    $('stepsA').hidden=desk||isIOS;
+    $('stepsI').hidden=!isIOS;
     openModal($('ins'),'insX');
   }
   $('instBtn').addEventListener('click',function(){
@@ -400,8 +388,6 @@ btn.addEventListener('click',()=>{
     }
     openIns();
   });
-  $('tabA').addEventListener('click',function(){tab(false)});
-  $('tabI').addEventListener('click',function(){tab(true)});
 
   /* --- Copier le lien (comme un favori) --- */
   function copyLink(btn){
