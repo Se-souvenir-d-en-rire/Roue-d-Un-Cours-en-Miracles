@@ -109,7 +109,7 @@ h1{font-size:1.5rem;margin:2px 0 4px;text-align:center}
 </div>
 <div id="app" style="display:flex;flex-direction:column;align-items:center">
   <div class="stage"><div class="pointer"></div><canvas id="wheel" height="337" width="337"></canvas><button id="spin" type="button"><span>TOURNER</span></button></div>
-  <div class="result" id="result"><div class="q hint">…</div><div class="ref"></div></div>
+  <div class="result" id="result"><div class="q hint">Clique sur la roue pour recevoir une phrase du livre</div><div class="ref"></div></div>
   <div class="bar"><button id="dl" class="lnk" type="button">Télécharger en un seul fichier</button></div>
 </div>
 <canvas id="fx"></canvas>
@@ -304,7 +304,7 @@ $('dl').addEventListener('click',async()=>{
   const sj=c.querySelector('#appjs');
   const data=JSON.stringify(pool).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
   sj.textContent='window.__SOLO=1;\n'+sj.textContent.replace('let pool=[]','let pool='+data);
-  c.querySelector('#result').innerHTML='<div class="q hint">…</div><div class="ref"></div>';
+  c.querySelector('#result').innerHTML='<div class="q hint">Clique sur la roue pour recevoir une phrase du livre</div><div class="ref"></div>';
   const html='<!DOCTYPE html>\n'+c.outerHTML;
   try{
     const d=window.claude&&await window.claude.use('downloads');
