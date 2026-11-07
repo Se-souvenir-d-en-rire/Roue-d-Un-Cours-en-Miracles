@@ -109,7 +109,7 @@ h1{font-size:1.5rem;margin:2px 0 4px;text-align:center}
 </div>
 <div id="app" style="display:flex;flex-direction:column;align-items:center">
   <div class="stage"><div class="pointer"></div><canvas id="wheel" height="337" width="337"></canvas><button id="spin" type="button"><span>TOURNER</span></button></div>
-  <div class="result" id="result"><div class="q hint">Clique sur la roue pour recevoir une phrase du livre</div><div class="ref"></div></div>
+  <div class="result" id="result"><div class="q hint">…</div><div class="ref"></div></div>
   <div class="bar"><button id="dl" class="lnk" type="button">Télécharger en un seul fichier</button></div>
 </div>
 <canvas id="fx"></canvas>
@@ -118,14 +118,12 @@ h1{font-size:1.5rem;margin:2px 0 4px;text-align:center}
     <button class="ins-x" id="aboutX" data-close type="button" aria-label="Fermer">✕</button>
     <h2 id="aboutT">🎡 À propos</h2>
     <p class="ab" id="aboutIntro">Une roue que l’on tourne et qui génère des messages tirés de l’enseignement d’Un Cours en Miracles, avec leurs référencements.</p>
-    <div class="ab-block"><span class="ab-ic">💻</span><p>Sur ordinateur, cliquez sur <b>«&nbsp;Installer&nbsp;»</b> pour installer l’application comme n’importe quelle autre. Elle aura sa propre icône et s’ouvrira dans sa propre fenêtre.</p></div>
-    <div class="ab-block"><span class="ab-ic">📱</span><p>Sur smartphone, appuyez sur <b>«&nbsp;Installer&nbsp;»</b> pour installer l’application : elle apparaîtra sur votre écran d’accueil.<span>Si elle n’y est pas, ouvrez la liste de vos applications installées (dans les <b>Paramètres</b>) et cherchez <b>«&nbsp;Roue ACIM&nbsp;»</b>.</span><span>Si vous ne la trouvez toujours pas, appuyez sur <b>«&nbsp;Copier le lien&nbsp;»</b> ci-dessous et ajoutez-le à vos favoris dans votre navigateur pour la retrouver plus facilement.</span></p></div>
+    <div class="ab-block"><span class="ab-ic">💻</span><p>Sur ordinateur : on clique sur <b>«&nbsp;Installer&nbsp;»</b> pour installer l’application comme n’importe quelle autre application ; une icône apparaîtra sur le bureau.</p></div>
+    <div class="ab-block"><span class="ab-ic">📱</span><p>Sur smartphone : on appuie sur <b>«&nbsp;Installer&nbsp;»</b> et l’application apparaît sur l’écran d’accueil.<span>(Si elle n’y est pas, elle apparaît peut-être dans la liste des applications installées, dans les <b>Paramètres</b>. Si elle n’y apparaît pas non plus, copiez le lien ci-dessous et ajoutez-le aux favoris de votre navigateur.)</span></p></div>
+    <div class="ins-btns"><button type="button" class="ins-copy" id="aboutCopy" hidden>🔗 Copier le lien</button></div>
     <p class="ab ab-small">Application gratuite – utilisation personnelle.</p>
     <p class="ab ab-small" id="reinstWrap" hidden>Déjà installée sur cet appareil. <button type="button" class="lnk-small" id="reinstBtn">Afficher de nouveau «&nbsp;Installer&nbsp;»</button></p>
-    <div class="ins-btns">
-      <button type="button" class="ins-copy" id="aboutCopy" hidden>🔗 Copier le lien</button>
-      <button type="button" class="ins-ok" data-close>Fermer</button>
-    </div>
+    <div class="ins-btns"><button type="button" class="ins-ok" data-close>Fermer</button></div>
   </div>
 </div>
 <div class="ins" id="done" hidden role="dialog" aria-modal="true" aria-labelledby="doneT">
@@ -306,7 +304,7 @@ $('dl').addEventListener('click',async()=>{
   const sj=c.querySelector('#appjs');
   const data=JSON.stringify(pool).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
   sj.textContent='window.__SOLO=1;\n'+sj.textContent.replace('let pool=[]','let pool='+data);
-  c.querySelector('#result').innerHTML='<div class="q hint">Clique sur la roue pour recevoir une phrase du livre</div><div class="ref"></div>';
+  c.querySelector('#result').innerHTML='<div class="q hint">…</div><div class="ref"></div>';
   const html='<!DOCTYPE html>\n'+c.outerHTML;
   try{
     const d=window.claude&&await window.claude.use('downloads');
