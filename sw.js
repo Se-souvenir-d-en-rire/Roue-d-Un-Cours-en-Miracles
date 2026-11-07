@@ -1,7 +1,7 @@
 /* Mode hors connexion pour la Roue d’Un Cours en Miracles.
    Quand tu modifies la roue, change simplement le numéro de version ci-dessous. */
-const CACHE = 'roue-acim-v1';
-const PAGE = "Roue%20d'Un%20Cours%20en%20Miracles.html";
+const CACHE = 'roue-acim-v2';
+const PAGE = 'index.html';
 const SHELL = ['./', PAGE, 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 
 self.addEventListener('install', event => {
